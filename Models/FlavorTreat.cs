@@ -1,8 +1,8 @@
 namespace SweetFactory.Models
 {
-    public class FlavorItem
+    public class FlavorTreat
     {
-        public int FlavorItemID { get; set; }
+        public int FlavorTreatID { get; set; }
         public int TreatID { get; set; }
         public int FlavorID { get; set; }
         public Flavor Flavor { get; set; }
