@@ -6,11 +6,11 @@ namespace SweetFactory.Models
     {
         public Flavor()
         {
-            this.Treats = new HashSet<FlavorTreat> Treats { get; set; }
+            this.Treats = new HashSet<FlavorTreat>();
         }
         
         public int FlavorID { get; set; }
-        public string Name { get; set; }
-        public virtual ICollection<FlavorTreat> Treats
+        public string FlavorName { get; set; }
+        public virtual ICollection<FlavorTreat> Treats { get; set; }
     }
 }
