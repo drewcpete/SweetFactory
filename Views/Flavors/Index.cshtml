@@ -16,9 +16,15 @@
 @foreach (Flavor flavor in Model)
 {
     <div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <p class="card-text">Name: @($"{flavor.FlavorName}")
-            @*/<p>@Html.ActionLink("Delete Flavor", "Delete", new { id = flavor.FlavorID })</p>/*@
+        <div class="card-body">
+            <p class="card-text">@($"{flavor.FlavorName}")</p>
+            <ul>
+               @* @foreach (Treat treat in @SweetFactory.Models.Flavor.Treats)
+                {
+                    <li>@("{treat.TreatName}")</li>
+                } *@
+            </ul>
+            <p>@Html.ActionLink("Delete Flavor", "Delete", new { id = flavor.FlavorID })</p>
         </div>
     </div>
 

@@ -1,0 +1,17 @@
+@{
+    Layout = "_Layout";
+}
+
+
+@model SweetFactory.Models.Flavor
+
+<h3>Fill out this information to add a Flavor!</h3>
+
+@using(Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.FlavorName)
+        @Html.TextBoxFor(model => model.FlavorName, new {@class="form-control"})
+    </div>
+    <input class="btn btn-info" type="submit" value="Save New Flavor">
+}
