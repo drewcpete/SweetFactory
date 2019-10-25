@@ -1,0 +1,29 @@
+@{
+    Layout = "_Layout";
+}
+
+@using SweetFactory.Models;
+@using System.Security.Claims
+@model IEnumerable<SweetFactory.Models.Treat>
+
+<h1>Treats!</h1>
+
+@if (@Model.Any())
+{
+    @foreach (Treat treat in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <p class="card-text">@($"{treat.TreatName}")</p>
+                <p>@Html.ActionLink("View treats that come in this flavor", "Details", new { id = treat.TreatID })</p>
+            </div>
+        </div>
+
+    }
+}
+else
+{
+    <h4>You haven't added any treats yet!</h4>    
+}
+
+
