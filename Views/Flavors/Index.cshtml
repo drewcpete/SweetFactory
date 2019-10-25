@@ -18,13 +18,7 @@
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <p class="card-text">@($"{flavor.FlavorName}")</p>
-            <ul>
-               @* @foreach (Treat treat in @SweetFactory.Models.Flavor.Treats)
-                {
-                    <li>@("{treat.TreatName}")</li>
-                } *@
-            </ul>
-            <p>@Html.ActionLink("Delete Flavor", "Delete", new { id = flavor.FlavorID })</p>
+            <p>@Html.ActionLink("View treats that come in this flavor", "Details", new { id = flavor.FlavorID })</p>
         </div>
     </div>
 

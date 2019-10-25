@@ -43,5 +43,11 @@ namespace SweetFactory.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Details(int id)
+        {
+            var thisFlavor = _db.Flavors.Include(f => f.Treats).ThenInclude(join => join.Treat).FirstOrDefault(flavor => flavor.FlavorID == id);
+            return View(thisFlavor);
+        }
+
     }
 }
