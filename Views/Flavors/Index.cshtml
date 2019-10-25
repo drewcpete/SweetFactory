@@ -1,0 +1,29 @@
+@{
+    Layout = "_Layout";
+}
+
+@using SweetFactory.Models;
+@model List<SweetFactory.Models.Flavor>;
+
+<h1>Flavors!</h1>
+
+@if (@Model.Count == 0)
+{
+    <h4>You haven't added any flavors yet!</h4>
+}
+
+
+@foreach (Flavor flavor in Model)
+{
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <p class="card-text">Name: @($"{flavor.FlavorName}")
+            @*/<p>@Html.ActionLink("Delete Flavor", "Delete", new { id = flavor.FlavorID })</p>/*@
+        </div>
+    </div>
+
+}
+
+<p>@Html.ActionLink("Add new Flavor", "Create")</p>
+
+<p>@Html.ActionLink("Home", "Index")</p>
